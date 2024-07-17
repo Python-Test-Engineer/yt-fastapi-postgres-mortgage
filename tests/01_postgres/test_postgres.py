@@ -47,7 +47,7 @@ def test_check_rows_in_employee_table_not_zero():
     assert result[0] > 0
 
 
-def test_check_pk_in_employee_table():
+def test_check_pk_in_properties_table():
 
     # Establishing the connection
     conn = psycopg2.connect(

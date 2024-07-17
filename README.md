@@ -10,6 +10,7 @@ For more info on registering with PgAdmin and Adminer see [https://github.com/Py
 - http://localhost:8000/api/healthchecker  
 - python .\sql_postgres\02_sql_crud_create_table_employee.py # create table
 - python .\sql_postgres\04_sql_crud_insert_random_many_employee.py # load data
+
 - python -m pytest -vs tests/01_postgres # run postgres wiring tests
 - python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage # run mortgage_calculator tests
 - python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5433/postgres tests/02_mortgage # run mortgage_calculator tests in test_db 5433
