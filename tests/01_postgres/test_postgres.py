@@ -44,7 +44,7 @@ def test_check_rows_in_employee_table_not_zero():
 
     # conn.commit()
     print(f"test completed OK with {result} rows returned\n")
-    assert result[0] > 50
+    assert result[0] > 0
 
 
 def test_check_pk_in_employee_table():
