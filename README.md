@@ -1,15 +1,19 @@
 # FastAPI Postgres Docker Mortgage
 
+For more info on registering with PgAdmin and Adminer see [https://github.com/Python-Test-Engineer/yt-docker-to-go/tree/main/python-postgres-pgadmin-adminer](https://github.com/Python-Test-Engineer/yt-docker-to-go/tree/main/python-postgres-pgadmin-adminer)
+
 - python -m venv venv
 - .\venv\Scripts\activate
 - pip install - requirements.txt
 - docker compose up -d
 - fastapi run .\app\main.py --reload
 - http://localhost:8000/api/healthchecker  
-- python -m pytest -vs tests/01_postgres 
-- python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage
+- python .\sql_postgres\02_sql_crud_create_table_employee.py # create table
+- python .\sql_postgres\04_sql_crud_insert_random_many_employee.py # load data
+- python -m pytest -vs tests/01_postgres # run postgres wiring tests
+- python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage # run mortgage_calculator tests
+- python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5433/postgres tests/02_mortgage # run mortgage_calculator tests in test_db 5433
 
-docker compose -f docker-compose-testdb.yml  up -d
 
 ##  API
 

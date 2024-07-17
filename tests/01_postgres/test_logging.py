@@ -31,12 +31,6 @@ def test_0010_case01():
     LOGGER.info("API call done")
 
 
-def func1():
-    """A test"""
-    LOGGER.error("func1 ValueError")
-    raise ValueError("EXPECTED IndexError func1 raised")
-
-
 @pytest.mark.sanity
 @pytest.mark.xfail
 def test_0011_case03():

@@ -13,12 +13,12 @@ services:
       # uses bound volume and a db-data folder will be created in project
       # - ./db-data/:/var/lib/postgresql/data/
       # uses named volume in container not a bound mount volume
-      - data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
   db_test:
     image: postgres:latest
     container_name: yt_postgres_test
     environment:
-      - POSTGRES_DB=postgres # optional
+      - POSTGRES_DB=postgres-test # optional
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
@@ -45,6 +45,4 @@ services:
       - 8080:8080
 
 volumes:
-  data:
-    name: data
-
+  pgdata:
