@@ -17,7 +17,7 @@ try:
         # host="postgres", # does not work
     )
     cursor = connection.cursor()
-    for i in range(20):
+    for i in range(50):
         n1 = random.randint(5, 15)
         n2 = random.randint(3, 10)
         postgres_insert_query = """ INSERT into employee(name, state) VALUES (%s, %s)"""

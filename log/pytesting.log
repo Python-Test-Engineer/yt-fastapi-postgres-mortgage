@@ -1,4 +1,4 @@
-2024-07-17 08:26:11 [    INFO] [test_logging] test_a1 (test_logging.py:14)
-2024-07-17 08:26:11 [    INFO] [test_logging] test_a2 (test_logging.py:21)
-2024-07-17 08:26:11 [    INFO] [test_logging] API call done (test_logging.py:31)
-2024-07-17 08:26:11 [   ERROR] [test_logging] test_case03 xfail (test_logging.py:38)
+2024-07-17 08:29:40 [    INFO] [test_logging] test_a1 (test_logging.py:14)
+2024-07-17 08:29:41 [    INFO] [test_logging] test_a2 (test_logging.py:21)
+2024-07-17 08:29:41 [    INFO] [test_logging] API call done (test_logging.py:31)
+2024-07-17 08:29:41 [   ERROR] [test_logging] test_case03 xfail (test_logging.py:38)
