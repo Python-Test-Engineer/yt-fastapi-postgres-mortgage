@@ -1,3 +1,15 @@
+# FastAPI Postgres Docker
+
+- python -m venv venv
+- .\venv\Scripts\activate
+- pip install - requirements.txt
+- docker compose up -d
+- fastapi run .\app\main.py --reload
+- http://localhost:8000/api/healthchecker  
+- python -m pytest -vs tests/01_postgres 
+- python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage
+
+docker compose -f docker-compose-testdb.yml  up -d
 
 ##  API
 
