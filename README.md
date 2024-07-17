@@ -1,5 +1,7 @@
 # FastAPI Postgres Docker Mortgage
 
+YouTube Video Walkthrough [https://www.youtube.com/watch?v=gr3WndOD4h4&list=PLsszRSbzjyvm5meFiH-rDU-YiC5kcOLcK&index=7](https://www.youtube.com/watch?v=gr3WndOD4h4&list=PLsszRSbzjyvm5meFiH-rDU-YiC5kcOLcK&index=7)
+
 For more info on registering with PgAdmin and Adminer see [https://github.com/Python-Test-Engineer/yt-docker-to-go/tree/main/python-postgres-pgadmin-adminer](https://github.com/Python-Test-Engineer/yt-docker-to-go/tree/main/python-postgres-pgadmin-adminer)
 
 - python -m venv venv
