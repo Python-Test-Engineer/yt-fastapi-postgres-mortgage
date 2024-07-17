@@ -1,4 +1,4 @@
-# FastAPI Postgres Docker
+# FastAPI Postgres Docker Mortgage
 
 - python -m venv venv
 - .\venv\Scripts\activate
@@ -79,7 +79,7 @@ Tests for `python -m pytest -vs tests/01_postgres` work OK using:
         host="host.docker.internal", # localhost now seems to work...
     )
 ```
-as we get PASS for connecting and getting row count > 0 for employee table
+as we get PASS for connecting and getting row count > 0 for employee table after sql_postgres\02 and 04 run
 
 `python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage`
 
