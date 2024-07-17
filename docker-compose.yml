@@ -1,0 +1,50 @@
+
+services:
+  postgres:  
+    container_name: yt_postgres_local  
+    image: postgres:16-alpine #postgres:
+    environment:
+      - POSTGRES_DB=postgres # optional
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      # uses bound volume and a db-data folder will be created in project
+      # - ./db-data/:/var/lib/postgresql/data/
+      # uses named volume in container not a bound mount volume
+      - data:/var/lib/postgresql/data
+  db_test:
+    image: postgres:latest
+    container_name: yt_postgres_test
+    environment:
+      - POSTGRES_DB=postgres # optional
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"  # 5433 is the port for the test database
+    restart: always
+    
+  pg-admin:
+    # image: dpage/pgadmin4:atest 
+    image: dpage/pgadmin4:8.9
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@email.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+
+    ports:
+      - "5050:5050"
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
+
+volumes:
+  data:
+    name: data
+
