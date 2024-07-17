@@ -28,5 +28,5 @@ app.include_router(routes.router, tags=["MortgageCalculator"], prefix="/api/v1")
 @app.get("/api/healthchecker")
 def root():
     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    msg = f"💪🏆🎉 The API is LIVE with latest version of FastAPI! {now}"
+    msg = f"💪🏆🎉 API LIVE! {now}"
     return {"message": msg}
