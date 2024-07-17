@@ -66,7 +66,8 @@ def test_check_pk_in_employee_table():
         AND constraint_type = 'PRIMARY KEY'
         AND table_name = 'properties'
     """
-
+    # SELECT * FROM information_schema.table_constraints
+    #  WHERE table_schema != 'pg_catalog' AND table_name = 'employee'
     cursor.execute(sql)
     result = cursor.fetchone()
 

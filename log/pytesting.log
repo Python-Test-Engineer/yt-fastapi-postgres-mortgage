@@ -1,0 +1,5 @@
+2024-07-17 04:16:25 [    INFO] [test_logging] test_a1 (test_logging.py:14)
+2024-07-17 04:16:26 [    INFO] [test_logging] test_a2 (test_logging.py:21)
+2024-07-17 04:16:26 [    INFO] [test_logging] API call done (test_logging.py:31)
+2024-07-17 04:16:26 [   ERROR] [test_logging] test_case03 xfail (test_logging.py:44)
+2024-07-17 04:16:26 [   ERROR] [test_logging] func1 ValueError (test_logging.py:36)

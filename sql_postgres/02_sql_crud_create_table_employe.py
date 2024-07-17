@@ -20,11 +20,25 @@ cursor.execute(f"DROP TABLE IF EXISTS {TABLE_NAME}")
 
 # Creating table as per requirement
 sql = f"""CREATE TABLE {TABLE_NAME} (
-				name VARCHAR(255) NOT NULL,
+			name VARCHAR(255) NOT NULL,
             state VARCHAR(255) NOT NULL
+            
 )"""
 
 try:
+    cursor.execute(sql)
+    conn.commit()
+    print(f"{TABLE_NAME} table created successfully........\n")
+
+except Exception as e:
+    print(f"Error {e}")
+
+try:
+    sql = f"""
+    ALTER TABLE IF EXISTS public.employee
+    ADD CONSTRAINT "unique employee constraint" UNIQUE (name);
+            
+    """
     cursor.execute(sql)
     conn.commit()
     print(f"{TABLE_NAME} table created successfully........\n")
