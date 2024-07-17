@@ -1,3 +1,15 @@
+# FastAPI Postgres Docker
+
+- python -m venv venv
+- .\venv\Scripts\activate
+- pip install - requirements.txt
+- docker compose up -d
+- fastapi run .\app\main.py --reload
+- http://localhost:8000/api/healthchecker  
+- python -m pytest -vs tests/01_postgres 
+- python -m pytest -vs --dburl=postgresql://postgres:postgres@localhost:5432/postgres tests/02_mortgage
+
+docker compose -f docker-compose-testdb.yml  up -d
 
 ##  API
 
@@ -47,7 +59,7 @@ sql crud works OK - tested with publisher and employee in slq_postgres folder
 The following are used in Python CRUD in sql_postgres folder
 
 ```
-POSTGRES_HOST = "host.docker.internal"
+POSTGRES_HOST = "host.docker.internal" # localhost now seems to work...
 POSTGRES_USER = "postgres"
 POSTGRES_PASSWORD = "postgres"
 POSTGRES_DB = "postgres"
@@ -64,7 +76,7 @@ Tests for `python -m pytest -vs tests/01_postgres` work OK using:
         database="postgres",
         user="postgres",
         password="postgres",
-        host="host.docker.internal",
+        host="host.docker.internal", # localhost now seems to work...
     )
 ```
 as we get PASS for connecting and getting row count > 0 for employee table
