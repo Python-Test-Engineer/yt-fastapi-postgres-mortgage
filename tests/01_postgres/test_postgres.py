@@ -33,11 +33,6 @@ def test_check_rows_in_employee_table_not_zero():
         password="postgres",
         host="localhost",  # "host.docker.internal",
     )
-    if conn:
-        print(f"\tConnected to DB...\n")
-        # print(conn)
-    else:
-        print("NO CONNECTION\n")
 
     cursor = conn.cursor()
 
@@ -50,3 +45,31 @@ def test_check_rows_in_employee_table_not_zero():
     # conn.commit()
     print(f"test completed OK with {result} rows returned\n")
     assert result[0] > 50
+
+
+def test_check_pk_in_employee_table():
+
+    # Establishing the connection
+    conn = psycopg2.connect(
+        database="postgres",
+        user="postgres",
+        password="postgres",
+        host="localhost",  # "host.docker.internal",
+    )
+
+    cursor = conn.cursor()
+
+    # Ensure employee table has been created and loaded with data from sql_postgres
+    sql = f""" 
+        SELECT COUNT(*) FROM information_schema.table_constraints 
+        WHERE table_schema != 'pg_catalog' 
+        AND constraint_type = 'PRIMARY KEY'
+        AND table_name = 'properties'
+    """
+
+    cursor.execute(sql)
+    result = cursor.fetchone()
+
+    # conn.commit()
+    print(f" -> {result} rows returned\n")
+    assert result[0] > 0
